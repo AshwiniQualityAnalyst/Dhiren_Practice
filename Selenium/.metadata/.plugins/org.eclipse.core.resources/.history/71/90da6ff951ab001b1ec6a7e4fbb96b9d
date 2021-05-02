@@ -1,0 +1,35 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButton {
+
+		public static void main(String[] args) throws InterruptedException {
+			String cDriver = "D:\\AutomationTools\\chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", cDriver);
+			WebDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			String url = "https://www.demoqa.com/radio-button";
+			driver.get(url);
+			//WebElement radioButton = driver.findElement(By.xpath("//div/input[@id='yesRadio']"));
+			//JavascriptExecutor jse = (JavascriptExecutor)driver;
+			//jse.executeScript("arguments[0].click()", radioButton);
+			
+			
+			/**
+			* Validate Radio button using isDisplayed() method
+			*/
+			 
+			WebElement radioElement = driver.findElement(By.xpath("//div/input[@id='yesRadio']"));
+			boolean selectState = radioElement.isDisplayed();
+			 
+			//performing click operation only if element is not selected
+			if(selectState == false) {
+			 radioElement.click();
+			}
+			
+	}
+
+}

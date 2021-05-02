@@ -1,0 +1,20 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckBox {
+
+	public static void main(String[] args) throws InterruptedException {
+		String cDriver = "D:\\AutomationTools\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", cDriver);
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		String url = "https://www.demoqa.com/automation-practice-form";
+		driver.get(url);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[text()='Sports']")).click();
+		driver.findElement(By.xpath("//label[text()='Reading']")).click();
+		
+	}
+
+}
